@@ -1,0 +1,223 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+format = """
+$os\
+$sudo\
+$username\
+$hostname\
+$localip\
+$directory\
+$docker_context\
+$git_branch\
+$git_commit\
+$git_metrics\
+$git_status\
+$line_break$character"""
+right_format = "$all"
+
+# Git
+[git_branch]
+format = '[$symbol($remote_branch@)$branch ]($style)'
+always_show_remote = true
+symbol = ' '
+style = 'bold #F34F29'
+
+[git_metrics]
+added_style = 'bold #F34F29'
+deleted_style = 'bold #F34F29'
+
+[git_state]
+style = 'bold #F34F29'
+
+[git_status]
+format = '[ $all_status (󱓎 $ahead_behind )]($style)'
+# File status
+conflicted = 'C'
+untracked = 'U'
+stashed = 'S'
+modified = 'M'
+staged = 'T'
+renamed = 'R'
+deleted = 'D'
+# Checkout status
+ahead = ' '
+behind = ' '
+diverged = ' '
+up_to_date = '󰓦 '
+style = 'bold #F34F29'
+
+# Programming Language
+[bun]
+format = '[$symbol($version )]($style)'
+symbol = ' '
+style = 'bold 226'
+
+[c]
+format = '[$symbol($version-($name) )]($style)'
+symbol = ' '
+style = 'bold 27'
+
+[cmake]
+format = '[$symbol($version )]($style)'
+symbol = ' '
+style = 'bold bright-blue'
+
+[dart]
+format = '[$symbol($version )]($style)'
+symbol = ' '
+style = 'bold 33'
+
+[deno]
+format = '[$symbol($version )]($style)'
+symbol = ' '
+style = 'bold 76'
+
+[docker_context]
+format = '[$symbol$context ]($style)'
+symbol = ' '
+style = 'bold 27'
+
+[dotnet]
+format = '[$symbol($version )(󰓾 $tfm )]($style)'
+symbol = '󰪮 '
+style = 'bold 93'
+
+[elixir]
+format = '[$symbol($version \(OTP $otp_version\) )]($style)'
+symbol = ' '
+style = 'bold 92'
+
+[java]
+format = '[$symbol($version) ]($style)'
+symbol = ' '
+style = 'bold 88'
+
+[kotlin]
+format = '[$symbol($version) ]($style)'
+symbol = ' '
+style = 'bold 92'
+
+[lua]
+format = '[$symbol($version) ]($style)'
+symbol = ' '
+style = 'bold 20'
+
+[nodejs]
+format = '[$symbol($version) ]($style)'
+symbol = ' '
+style = 'bold 40'
+
+[python]
+format = '[$symbol$pyenv_prefix ($version )(\($virtualenv\) )]($style)'
+symbol = ' '
+detect_folders = ['.venv', '.env']
+style = 'bold 220'
+
+[rust]
+format = '[$symbol($version )]($style)'
+symbol = ' '
+style = 'bold 216'
+
+# Package
+[package]
+format = '[$symbol$version ]($style)'
+symbol = ' '
+style = 'bold 202'
+
+# Cloud Provider
+[aws]
+format = '[$symbol$profile( \[ $region\])( \[ $duration\]) ]($style)'
+symbol = ' '
+style = 'bold bright-yellow'
+
+[azure]
+format = '[$symbol($subscription) ]($style)'
+symbol = ' '
+style = 'bold blue'
+
+[gcloud]
+format = '[$symbol$account(@$domain)(#$project)( \[ $region\]) ]($style)'
+symbol = '󱇶 '
+style = 'bold bright-blue'
+
+# Terminal
+[line_break]
+disable = false
+
+[username]
+format = '[$user@]($style)'
+style_root = 'bold red'
+style_user = 'bold yellow'
+
+[hostname]
+format = '[$hostname ]($style)'
+style = 'bold green'
+ssh_only = true
+
+[localip]
+disabled = false
+
+# Command
+[cmd_duration]
+format = '[󱑍 $duration]($style)'
+show_miliseconds = true
+disabled = true
+
+# Operation System
+[os]
+format = '$symbol'
+disabled = false
+
+[os.symbols]
+#AIX = "➿ "
+#Alpaquita = "🔔 "
+#AlmaLinux = "💠 "
+#Alpine = "🏔️ "
+Amazon = "[ ](blue)"
+Android = "[ ](bright-green)"
+Arch = "[󰣇 ](bright-blue)"
+Artix = "[ ](blue)"
+#CachyOS = "🎗️ "
+CentOS = "[ ](purple)"
+Debian = "[ ](red)"
+#DragonFly = "🐉 "
+#Emscripten = "🔗 "
+#EndeavourOS = "🚀 "
+Fedora = "[ ](blue)"
+FreeBSD = "[ ](red)"
+Garuda = "[ ](dimmed yellow)"
+Gentoo = "[ ](white)"
+#HardenedBSD = "🛡️ "
+#Illumos = "🐦 "
+Kali = "[ ](blue)"
+Linux = "[ ](white)"
+#Mabox = "📦 "
+Macos = "[ ](white)"
+Manjaro = "[ ](green)"
+#Mariner = "🌊 "
+#MidnightBSD = "🌘 "
+Mint = "[󰣭 ](bright-green)"
+#NetBSD = "🚩 "
+NixOS = "[ ](cyan)"
+#Nobara = "🎩 "
+OpenBSD = "[ ](yellow)"
+#OpenCloudOS = "☁️ "
+#openEuler = "🦉 "
+openSUSE = "[ ](bright-green)"
+OracleLinux = "[ ](red)"
+Pop = "[ ](blue)"
+Raspbian = "[ ](red)"
+Redhat = "[ ](bright-red)"
+RedHatEnterprise = "[ ](red)"
+#RockyLinux = "💠 "
+#Redox = "🧪 "
+#Solus = "⛵ "
+SUSE = "[ ](bright-green)"
+Ubuntu = "[ ](196)"
+#Ultramarine = "🔷 "
+Unknown = "[? ](bright-red)"
+#Uos = "🐲 "
+Void = "[ ](dimmed green)"
+Windows = "[ ](blue)"
