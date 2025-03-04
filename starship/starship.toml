@@ -110,7 +110,7 @@ symbol = ' '
 style = 'bold 40'
 
 [python]
-format = '[$symbol$pyenv_prefix ($version )(\($virtualenv\) )]($style)'
+format = '[$symbol($pyenv_prefix )($version )(\($virtualenv\) )]($style)'
 symbol = ' '
 detect_folders = ['.venv', '.env']
 style = 'bold 220'
