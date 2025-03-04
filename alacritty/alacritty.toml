@@ -1,0 +1,14 @@
+[terminal.shell]
+program = "/bin/tmux"
+#args = [ "new", "-A", "-c", "$HOME/compsci", "-s", "compsci" ]
+
+[window.padding]
+x = 3
+y = 3
+
+[font.normal]
+family = "JetbrainsMono NF"
+style = "Regular"
+
+[env]
+TERM = "xterm-256color"
