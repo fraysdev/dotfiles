@@ -1,6 +1,6 @@
 # LS (Eza)
-alias ll="eza -la --icons"
-alias lt="eza -la --icons --tree"
+alias ll="eza -la --icons --git-ignore --git"
+alias lt="eza -la --icons --git-ignore --git --tree"
 
 # Neovim
 alias vim="nvim"
