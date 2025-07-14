@@ -1,0 +1,42 @@
+
+# -+---+- Conventional Commit Message Template -+---+-
+# 
+# -+- Format -+-
+# <type>([scope]): <description>
+# 
+# [optional body]
+# 
+# [optional footer(s)]
+# 
+# -+- SemVer -+-
+# MAJOR.MINOR.PATCH
+# 
+# -+- Types -+-
+# fix       : A bug fix (SemVer: PATCH)
+# feat      : A new feature (SemVer: MINOR)
+# ci        : Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+# style     : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+# build     : Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+# test      : Adding missing tests or correcting existing tests
+# perf      : A code change that improves performance
+# refactor  : A code change that neither fixes a bug nor adds a feature
+# chore     : Maintenance tasks
+# docs      : Documentation only changes
+# 
+# 
+# -+---+- Personal Commit Message Template -+---+-
+# ini: Initial commit
+# 
+# add: Add new feature (or config)
+# fix: Fix broken feature (or config)
+# chg: Change a feature
+# upd: Update a feature
+# mod: Modify a file (format/syntax/whitespace)
+# 
+# mov: Moving a file or directory
+# cop: Copy a file or directory
+# rmv: Remove a features (single: file or directory)
+# 
+# cfg: Add/change a configuration files
+# rwt: Rewrite a features (single: file or directory)
+# 

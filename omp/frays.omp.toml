@@ -1,0 +1,95 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+final_space = true
+version = 3
+
+[palette]
+  rosewater = '#f5e0dc'
+  flamingo = '#f2cdcd'
+  pink = '#f5c2e7'
+  mauve = '#cba6f7'
+  red = '#f38ba8'
+  maroon = '#eba0ac'
+  peach = '#fab387'
+  yellow = '#f9e2af'
+  green = '#a6e3a1'
+  teal = '#94e2d5'
+  sky = '#89dceb'
+  sapphire = '#74c7ec'
+  blue = '#89b4fa'
+  lavender = '#b4befe'
+
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    template = '{{ if .SSHSession }} {{ end }}{{ .UserName }}@{{ .HostName }} '
+    foreground = 'p:peach'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    template = '{{ path .Path .Location }} '
+    foreground = 'p:blue'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    template = "{{ .HEAD }} "
+    foreground = "p:maroon"
+
+  [[blocks.segments]]
+    type = 'shell'
+    style = 'plain'
+    template = '${{ .Name }}-v{{ .Version }} '
+    foreground = 'p:lavender'
+
+
+[[blocks]]
+  type = 'rprompt'
+
+  # [[blocks.segments]]
+  # type = "node"
+  # style = "plain"
+  # template = " 󰎙 {{ if .PackageManagerName }}{{ .PackageManagerName }} {{ end }}{{ .Full }}"
+
+  [[blocks.segments]]
+  type = "python"
+  style = "plain"
+  template = "  {{ .Full }}"
+
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+  type = "text"
+  style = "plain"
+  template = "~>"
+  foreground_templates = [
+    "{{ if gt .Code 0 }}p:red{{ end }}",
+    "p:green"
+  ]
+
+
+[secondary_prompt]
+  template = "-> "
+  foreground = 'green'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '~> '
+  foreground_templates = [
+    "{{ if gt .Code 0 }}p:red{{ end }}",
+    "{{ if eq .Code 0 }}p:green{{ end }}"
+  ]

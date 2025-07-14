@@ -1,0 +1,169 @@
+ls
+ls -la
+echo "Hello"
+git status
+help command | explore
+help zsh | explore
+help where | explore
+1..2
+date
+date now
+date now + 1day
+$(date now) + 1day
+cd ~/.dotfiles/
+ls -la
+open ./zsh/.zshrc
+open ./zsh/.zshenv
+open ./omp/frays.omp.toml
+open ./git/config
+http get https://raw.githubusercontent.com/FrankyRay/frays.dev/refs/heads/main/tsconfig.json
+http get https://raw.githubusercontent.com/FrankyRay/frays.dev/refs/heads/main/tsconfig.json | to yaml
+"hello" + "world"
+"hello" + 1
+1 + 1.2
+0.1 + 0.2
+exit
+ls
+cd ~/.dotfiles/
+LS
+ls
+ls -la
+ls -la ~/.config/
+ls -la ~/ky-keyring/
+ls -la ~/.config/
+$env.config.buffer_editor = "nvim"
+config nu
+ls -la ~/.config/
+config nu
+nvim .
+exit
+config nu
+sudo pacman -S bat
+$env.config | table -e | bat -p
+$nu.env-path
+$nu.config-path
+$nu.vendor-autoload-dirs
+$nu.user-autoload-dirs
+$nu.default-config-dir
+cd ~/.dotfiles/
+mkdir nushell/autoload
+nvim nushell/autoload/ohmyposh.nu
+exit
+$nu.user-autoload-dirs
+ls -la ~/.config/nushell
+sudo pacman -Syu
+nvim .
+ls -la
+nvim ~/.dotfiles/
+nvim .oh-my-posh.nu
+nvim ~/.dotfiles/
+rm -rf .oh-my-posh.nu
+cd ~/.dotfiles/
+rm -rf nushell/autoload/ohmyposh.nu
+oh-my-posh init nu --config ~/.config/omp/frays.omp.toml --print | save ~/.config/nushell/autoload/oh-my-posh.nu --force
+exit
+config nu
+exit
+cd ~/.dotfiles/
+code .
+exit
+clear
+cd ~/.dotfiles/
+clear
+exir
+exit
+git status
+git add git
+gs
+git status
+clear
+sudo pacman -S starship
+exit
+cd ~/.dotfiles/
+clear
+exit
+ls -la
+^ls
+table --list
+$env.config.table.mode = basic
+$env.config.table.mode = "basic"
+table --list
+$env.config.table.mode = "compact"
+table --list
+ls -la
+table --list
+$env.config.table.mode = "compact_double"
+table --list
+ls -la
+cd ~/.dotfiles/
+ls -la
+table --list
+$env.config.table.mode = "default"
+table --list
+$env.config.table.mode = "heavy"
+table --list
+$env.config.table.mode = "light"
+table --list
+ls -la
+table --list
+$env.config.table.mode = "none"
+ls -la
+table --list
+$env.config.table.mode = "reinforced"
+table --list
+ls -la
+ls
+table --list
+$env.config.table.mode = "thin"
+table --list
+$env.config.table.mode = "with_love"
+table --list
+$env.config.table.mode = "psql"
+table --list
+ls -la
+$env.config.table.mode = "markdown"
+ls -la
+$env.config.table.mode = "dots"
+ls -la
+$env.config.table.mode = "restructured"
+table --list
+ls -la
+$env.config.table.mode = "ascii_rounded"
+ls -la
+$env.config.table.mode = "basic_compact"
+ls -la
+$env.config.table.mode = "compact_double"
+clear
+code .
+exit
+ls -la
+$env.config.table.mode = "compact"
+ls -la
+exit
+ls -la
+clear
+config --help
+$env.config.color_config | sort
+{a:true,b:false,c:0mb,d:0.5mb,e:10mib}
+{ str: "Hello world!", int: 1, float: 3.14, bool: [ true, false ], dates: 2025-05-09, duration: 1day }
+0..5
+null
+0xFF
+0x[FF DE]
+0x[41]
+0b11
+0b[11]
+config nu --doc | nu-highlight | less -R
+exit
+http get https://lrclib.net/api/get?track_name=Muda+Hanya+Sekali&artist_name=Newlife_Betlehem
+http get "https://lrclib.net/api/get?track_name=Muda+Hanya+Sekali&artist_name=Newlife_Youth"
+http get "https://lrclib.net/api/get?track_name=Risen&artist_name=Covenant_Worship"
+exit
+http get "http://localhost:8000/api/customers/"
+http get "http://localhost:8000/api/customers"
+http get "http://localhost:8080/api/customers"
+yt-dlp --help
+yt-dlp --dump-json https://youtu.be/LP4yEH-Lqjc
+yt-dlp --dump-json https://youtu.be/LP4yEH-Lqjc | from json
+yt-dlp --dump-json https://youtu.be/LP4yEH-Lqjc | from json | get format
+yt-dlp --dump-json https://youtu.be/LP4yEH-Lqjc | from json | get formats

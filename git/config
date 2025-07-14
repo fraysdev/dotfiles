@@ -1,0 +1,46 @@
+[user]
+    name = "FrankyRay"
+    email = "frankyraymarcellsinaga@gmail.com"
+
+[core]
+    editor = "nvim"
+
+[column]
+    ui = "auto"
+
+# gpg signing
+[gpg]
+    format = "ssh"
+
+[gpg "ssh"]
+    program = ~/.ssh/id_ed25519.pub
+
+# gi: git init
+[init]
+    defaultBranch = "main"
+
+# gcl: git clone
+[url "git@github.com:FrankyRay/"]
+    insteadOf = "frays:"
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+[url "git@gitlab.cs.ui.ac.id:"]
+    insteadOf = "glcs:"
+    insteadOf = "cs:"
+
+# gs: git status
+[status]
+    short = true
+    branch = true
+    showUntrackedFiles = true
+
+# gp: git push
+[push]
+    default = current
+
+# gc: git commit
+[commit]
+    status = false
+    template = ~/.config/git/template
