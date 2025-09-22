@@ -1,0 +1,121 @@
+{
+    // Update
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "mpris"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        // "network",
+        // "bluetooth",
+        "battery",
+        "clock"
+        // "tray"
+    ],
+    
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "focused": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50
+    },
+    
+    "mpris": {
+        "format": "{status_icon}  {title}",
+        "status-icons": {
+            "paused": "",
+            "playing": "",
+            "stopped": ""
+        },
+        "max-length": 50
+    },
+    
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "🔇 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "Muted ",
+        "format-icons": {
+            "headphone": "🎧",
+            "hands-free": "🎧",
+            "headset": "🎧",
+            "phone": "📱",
+            "portable": "📱",
+            "car": "🚗",
+            "default": ["🔈", "🔉", "🔊"]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) 📶",
+        "format-ethernet": "{ipaddr}/{cidr} 🌐",
+        "tooltip-format": "{ifname} via {gwaddr} 🌐",
+        "format-linked": "{ifname} (No IP) 🌐",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["🪫", "🔋", "🔋", "🔋", "🔋"]
+    },
+    
+    "clock": {
+        "timezone": "Asia/Jakarta",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M • %A, %d/%m}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    
+    "tray": {
+        "spacing": 10
+    }
+}

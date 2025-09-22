@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ags": "*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.6"
+  }
+}

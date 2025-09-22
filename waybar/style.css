@@ -1,0 +1,215 @@
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+
+    font-family: "Outfit", "JetBrainsMono Nerd Font";
+    font-size: 1rem;
+}
+
+window#waybar {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+
+    background-color: transparent;
+    color: #cdd6f4;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Workspaces */
+#workspaces {
+    background-color: rgba(30, 30, 46, 0.6);
+    border-radius: 20px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button {
+    padding: 4px 6px;
+    background-color: rgba(116, 199, 236, .1);
+    color: #cdd6f4;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:nth-child(1) {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#workspaces button:nth-last-child(1) {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+#workspaces button:hover {
+    background-color: rgba(116, 199, 236, .8);
+    color: #89b4fa;
+}
+
+#workspaces button.empty {
+    background-color: transparent;
+    color: #6c7086;
+}
+
+#workspaces button.urgent {
+    background-color: rgba(243, 139, 168, .1);
+    color: #1e1e2e;
+}
+
+#workspaces button.active {
+    background-color: rgba(116, 199, 236, 1);
+    color: #1e1e2e;
+}
+
+/* Window title */
+#window {
+    background-color: rgba(30, 30, 46, 0.8);
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin: 0 4px;
+    color: #cdd6f4;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Media player */
+#mpris {
+    background-color: rgba(30, 30, 46, 0.8);
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin: 0 4px;
+    color: #f9e2af;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#mpris:hover {
+    background-color: rgba(249, 226, 175, 0.1);
+    border-color: rgba(249, 226, 175, 0.3);
+}
+
+/* Individual widget modules */
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#clock {
+    background-color: rgba(30, 30, 46, 0.8);
+    border-radius: 20px;
+    padding: 6px 12px;
+    margin: 0 2px;
+    color: #cdd6f4;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover,
+#clock:hover {
+    background-color: rgba(137, 180, 250, 0.1);
+    border-color: rgba(137, 180, 250, 0.3);
+}
+
+/* Pulseaudio specific */
+#pulseaudio {
+    color: #a6e3a1;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.1);
+}
+
+/* Network specific */
+#network {
+    color: #89b4fa;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.1);
+}
+
+/* Bluetooth specific */
+#bluetooth {
+    color: #89b4fa;
+}
+
+#bluetooth.disabled {
+    color: #6c7086;
+    background-color: rgba(108, 112, 134, 0.1);
+}
+
+#bluetooth.connected {
+    color: #a6e3a1;
+    background-color: rgba(166, 227, 161, 0.1);
+}
+
+/* Battery specific */
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #f9e2af;
+    background-color: rgba(249, 226, 175, 0.1);
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.2);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(243, 139, 168, 0.4);
+    }
+}
+
+/* Clock specific */
+#clock {
+    color: #f2cdcd;
+    font-weight: bold;
+    background-color: rgba(242, 205, 205, 0.1);
+}
+
+/* Tray */
+#tray {
+    background-color: rgba(30, 30, 46, 0.8);
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin: 0 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.2);
+    border-radius: 16px;
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(30, 30, 46, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: #cdd6f4;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}

@@ -1,6 +1,5 @@
 
 # -+---+- Conventional Commit Message Template -+---+-
-# 
 # -+- Format -+-
 # <type>([scope]): <description>
 # 
@@ -31,7 +30,7 @@
 # fix: Fix broken feature (or config)
 # chg: Change a feature
 # upd: Update a feature
-# mod: Modify a file (format/syntax/whitespace)
+# fmt: Reformat a file (manual or prettier)
 # 
 # mov: Moving a file or directory
 # cop: Copy a file or directory

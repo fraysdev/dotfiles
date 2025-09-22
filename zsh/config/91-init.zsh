@@ -1,7 +1,7 @@
-## ===[ PROMPT: Starship ]=== ##
-eval "$(starship init zsh)"
+### Zoxide
+eval "$(zoxide init zsh)"
 
-## ===[ FZF ]=== ##
+### Fzf -- Fuzzy finder
 source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude='.git'"
 export FZF_DEFAULT_OPTS="--height=50% --layout=default --border=rounded"
@@ -15,7 +15,4 @@ export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude='.gi
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons {} | head -200'"
 
 # Tmux fzf conf
-#export FZF_TMUX_OPTS=" -p90%,70%"
-
-## ===[ ZOXIDE ]=== ##
-eval "$(zoxide init zsh)"
+export FZF_TMUX_OPTS=" -p90%,70%"

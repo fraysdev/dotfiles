@@ -1,0 +1,220 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+@use "sass:color";
+// @use "styles/variables";
+
+$prefered-size: 30px;
+
+// Catppuccin
+$rosewater: #f5e0dc;
+$flamingo: #f2cdcd;
+$pink: #f5c2e7;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$maroon: #eba0ac;
+$peach: #fab387;
+$yellow: #e5c890;
+$green: #a6e3a1;
+$teal: #94e2d5;
+$sky: #89dceb;
+$sapphire: #74c7ec;
+$blue: #89b4fa;
+
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+// $primary-font: "Geist Mono Nerd Font Propo";
+$primary-font: "JetbrainsMono Nerd Font Propo";
+
+@mixin widget($color, $separation: true) {
+  background-color: #1e1e2e;
+  min-height: $prefered-size;
+  color: color.scale($color);
+  border-bottom: 1px solid $color;
+
+  @if $separation {
+    > *:not(:last-child) {
+      border-right: 1px dashed $color;
+    }
+  } @else {
+    .separate  {
+      border-right: 1px dashed $color;
+    }
+  }
+
+  button, .icon {
+    min-width: $prefered-size;
+  }
+
+  button:hover {
+    background-color: #313244;
+  }
+
+  .content {
+    padding: 0 8px;
+  }
+}
+
+@mixin progress-bar($color) {
+  background-color: #1e1e2e;
+
+  .progress, .progress leverbar {
+    min-height: $prefered-size;
+    min-width: $prefered-size;
+  }
+  
+  .progress levelbar trough block.filled {
+    background-color: color.change($color, $alpha: .20);
+    border-radius: 0;
+  }
+  
+  .progress levelbar trough block.empty {
+    background-color: transparent;
+  }
+
+  .progress .icon {
+    color: color.change($color, $alpha: .50);
+  }
+
+  .progress .number {
+    // color: $color;
+    color: color.change($color, $saturation: 75%);
+    font-size: 12px;
+    padding-right: 1px;
+  }
+}
+
+window.Bar {
+  background-color: transparent;
+  // background-color: color.change(#11111b, $alpha: .40);
+  color: white;
+  font-weight: bold;
+  font-family: $primary-font;
+  font-size: 16px;
+  
+  > centerbox {
+    background: transparent;
+    border-radius: 10px;
+    // margin: 2px;
+  }
+  
+  button {
+    background-color: transparent;
+    border-radius: 0;
+    min-height: $prefered-size;
+    min-width: $prefered-size;
+    padding: 0;
+  }
+
+  .os {
+    @include widget($blue);
+  }
+
+  .hyprland {
+    @include widget($blue, false);
+
+    button {
+      // color: color.change($blue, $alpha: .75);
+      color: $blue;
+      min-width: $prefered-size;
+      min-height: $prefered-size;
+    }
+    
+    .empty {
+      color: color.change($blue, $alpha: .30);
+    }
+
+    .active {
+      background-color: color.change($blue, $alpha: .40);
+      color: white;
+    }
+  }
+
+  .mpris {
+    @include widget($teal);
+
+    .disable {
+      color: color.change($teal, $alpha: .80);
+    }
+
+    .duration {
+      padding: 0 8px 0 4px;
+    }
+
+    .small-icon {
+      min-height: calc($prefered-size / 2);
+      min-width: calc($prefered-size / 2);
+    }
+  }
+
+  .datetime {
+    @include widget($pink);
+  }
+
+  .keylock {
+    @include widget($green, false);
+
+    label {
+      min-width: $prefered-size;
+      min-height: $prefered-size;
+    }
+
+    .on {
+      background-color: color.change($green, $alpha: .40);
+      color: white;
+    }
+  }
+
+  .cpu {
+    @include widget($red, false);
+    @include progress-bar($red);
+  }
+
+  .ram {
+    @include widget($red, false);
+    @include progress-bar($red);
+  }
+
+  .gpu {
+    @include widget($red);
+    @include progress-bar($red);
+
+    .device {
+      padding: 0 8px 0 4px;
+    }
+  }
+
+  .utilities {
+    @include widget($green);
+  }
+
+  .audio {
+    @include widget($peach, false);
+    @include progress-bar($peach);
+  }
+  
+  .brightness {
+    @include widget($peach);
+    @include progress-bar($peach);
+  }
+  
+  .bluetooth {
+    @include widget($sapphire);
+  }
+  
+  .network {
+    @include widget($sapphire);
+  }
+  
+  .battery {
+    @include widget($green);
+    @include progress-bar($green);
+  }
+  .battery.critical {
+    @include widget($red);
+    @include progress-bar($red);
+  }
+  .battery.charging {
+    @include widget($blue);
+    @include progress-bar($blue);
+  }
+}

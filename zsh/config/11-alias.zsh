@@ -1,3 +1,8 @@
+### LS (Eza)
+alias ll="eza -la --icons --git-ignore --git"
+alias lt="eza -la --icons --git-ignore --git --tree"
+
+### Git
 alias gi="git init"
 alias gcl="git clone"
 

@@ -20,8 +20,9 @@
     defaultBranch = "main"
 
 # gcl: git clone
-[url "git@github.com:FrankyRay/"]
+[url "git@github.com:fraysdev/"]
     insteadOf = "frays:"
+    insteadOf = "fr:"
 
 [url "git@github.com:"]
     insteadOf = "gh:"
