@@ -1,0 +1,36 @@
+[user]
+    name = "fraysdev"
+    email = "61337607+fraysdev@users.noreply.github.com"
+
+[core]
+    editor = "nvim"
+
+[column]
+    ui = "auto"
+
+# gi: git init
+[init]
+    defaultBranch = "main"
+
+# gcl: git clone
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+# gs: git status
+[status]
+    short = true
+    branch = true
+    showUntrackedFiles = true
+
+# gp: git push
+[push]
+    default = current
+
+# gc: git commit
+[commit]
+    status = false
+    template = ~/.gittemplate
+
+[include]
+    path = ~/.gitconfig.local
+
