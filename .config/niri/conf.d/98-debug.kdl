@@ -1,0 +1,33 @@
+// https://niri-wm.github.io/niri/Configuration%3A-Debug-Options.html
+
+// debug {
+//     preview-render "screencast"
+//     // preview-render "screen-capture"
+//     enable-overlay-planes
+//     disable-cursor-plane
+//     disable-direct-scanout
+//     restrict-primary-scanout-to-matching-format
+//     force-disable-connectors-on-resume
+//     render-drm-device "/dev/dri/renderD129"
+//     ignore-drm-device "/dev/dri/renderD128"
+//     ignore-drm-device "/dev/dri/renderD130"
+//     force-pipewire-invalid-modifier
+//     dbus-interfaces-in-non-session-instances
+//     wait-for-frame-completion-before-queueing
+//     emulate-zero-presentation-time
+//     disable-resize-throttling
+//     disable-transactions
+//     keep-laptop-panel-on-when-lid-is-closed
+//     disable-monitor-names
+//     strict-new-window-focus-policy
+//     honor-xdg-activation-with-invalid-serial
+//     skip-cursor-only-updates-during-vrr
+//     deactivate-unfocused-windows
+// }
+
+// binds {
+//     Mod+Shift+Ctrl+T { toggle-debug-tint; }
+//     Mod+Shift+Ctrl+O { debug-toggle-opaque-regions; }
+//     Mod+Shift+Ctrl+D { debug-toggle-damage; }
+// }
+

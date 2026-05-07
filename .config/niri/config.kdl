@@ -1,0 +1,20 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+include "conf.d/10-input.kdl"
+include "conf.d/20-output.kdl"
+include "conf.d/30-layout.kdl"
+include "conf.d/35-animation.kdl"
+include "conf.d/40-keybind.kdl"
+include "conf.d/45-recent-window.kdl"
+include "conf.d/60-window.kdl"
+include "conf.d/65-layer.kdl"
+include "conf.d/70-startup.kdl"
+include "conf.d/98-debug.kdl"
+include "conf.d/99-misc.kdl"
+
+// Noctalia Shell
+include "conf.d/90-noctalia.kdl"
+

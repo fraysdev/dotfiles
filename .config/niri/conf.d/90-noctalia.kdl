@@ -1,0 +1,56 @@
+// Noctalia-specific configuration for Niri
+// https://docs.noctalia.dev/v4/getting-started/compositor-settings/niri/
+
+window-rule {
+  // Rounded corners for a modern look.
+  geometry-corner-radius 4
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
+// Set the regular wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
+
+// Set transparent workspace background color so you see the backdrop at all times.
+layout {
+  background-color "transparent"
+}
+
+// Optionally, disable the workspace shadows in the overview.
+overview {
+  workspace-shadow {
+    off
+  }
+}
+
+binds {
+    // Core Noctalia binds
+    Mod+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+
+    // Audio & Brightness
+    XF86AudioRaiseVolume     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute            { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+
+    Alt+XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increaseInput"; }
+    Alt+XF86AudioLowerVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decreaseInput"; }
+    XF86AudioMicMute         { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
+
+    XF86MonBrightnessUp      { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown    { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+}
+
+// Autostart
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
