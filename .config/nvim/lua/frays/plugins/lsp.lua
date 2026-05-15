@@ -101,6 +101,34 @@ return {
                 }
             }
         })
+
+        vim.lsp.config('textlab', {
+        settings = {
+          texlab = {
+            -- Build config: pdflatex via latexmk, compile on save
+            build = {
+              executable = "latexmk",
+              args = {
+                "-pdf",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "%f",
+              },
+              onSave = true,           -- auto-compile on :w
+              forwardSearchAfter = true, -- open PDF after build
+            },
+            -- Forward search via Zathura (SyncTeX)
+            forwardSearch = {
+              executable = "zathura",
+              args = { "--synctex-forward", "%l:1:%f", "%p" },
+            },
+            -- ChkTeX linting on open and save
+            chktex = {
+              onOpenAndSave = true,
+            },
+          },
+        },
+      })
     end
 }
 
